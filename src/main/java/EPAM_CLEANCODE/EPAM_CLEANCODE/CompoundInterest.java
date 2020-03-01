@@ -1,7 +1,12 @@
 package EPAM_CLEANCODE.EPAM_CLEANCODE;
 
 import java.math.BigDecimal;
+
 import java.util.*;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.*;
 public class CompoundInterest {
 	static Scanner sc1=new Scanner(System.in);
@@ -10,13 +15,13 @@ public class CompoundInterest {
 	  int timePeriod;
 	
 	public CompoundInterest()
-	{
-		System.out.println("*****************CompoundIntrest Calculator******************");
-        System.out.println("Enter Principle amount");
+	{	final Logger LOGGER=LogManager.getLogger(CompoundInterest.class); 
+	LOGGER.info("*****************CompoundIntrest Calculator******************");
+	LOGGER.info("Enter Principle amount");
        this.principleAmount=sc1.nextBigDecimal();
-        System.out.println("Enter Rate of Intrest");
+       LOGGER.info("Enter Rate of Intrest");
         this.interestRate=sc1.nextBigDecimal();
-        System.out.println("Enter Total Time Period");
+        LOGGER.info("Enter Total Time Period");
         this.timePeriod=sc1.nextInt();
         
 	}

@@ -3,21 +3,24 @@ package EPAM_CLEANCODE.EPAM_CLEANCODE;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class SimpleInterest {
 	static Scanner sc1=new Scanner(System.in);
 	 BigDecimal principleAmount;
 	  BigDecimal interestRate;
 	  BigDecimal timePeriod;
-	
+	  final Logger LOGGER=LogManager.getLogger(SimpleInterest.class); 
 	public SimpleInterest()
 	{
-		
-		System.out.println("******************SimpleIntrest Calculator*******************");
-        System.out.println("Enter Principle amount");
+		final Logger LOGGER=LogManager.getLogger(CompoundInterest.class); 
+		LOGGER.info("******************SimpleIntrest Calculator*******************");
+		LOGGER.info("Enter Principle amount");
        this.principleAmount=sc1.nextBigDecimal();
-        System.out.println("Enter Rate of Intrest");
+       LOGGER.info("Enter Rate of Intrest");
         this.interestRate=sc1.nextBigDecimal();
-        System.out.println("Enter Time Period");
+        LOGGER.info("Enter Time Period");
         this.timePeriod=sc1.nextBigDecimal();
 	}
 	
